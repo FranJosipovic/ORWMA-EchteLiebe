@@ -1,3 +1,51 @@
 <resources>
     <string name="app_name">EchteLiebe</string>
+    <string name="info_about_Bvb_first_paragraph">
+        Borussia Dortmund stands for intensity, authenticity, cohesion and ambition. There’s an intense character to everything we do. Our stadium is the epicentre. This is where all of BVB’s energy is released. We enjoy a special place in the hearts of all our fans: their unconditional loyalty has carried us through the good times and the bad for more than 100 years. We are determined to give them something back. Be it through our promise to remain true to our traditional ethos and be as we’ve always been: sincere, candid, battilg and arounded in the values of Dortmund - the city and its people
+    </string>
+    <string name="info_about_Bvb_intensity">
+        Borussia Dortmund is a uniquely intensive footballing experience. Everything about hte club is charged with maximum energy and deep emotion. The club colours black and yellow are a visual expression of this intensity. It makes BVB unique and ensures that the club captivates so many people.
+    </string>
+    <string name="info_about_Bvb_authenticity">
+        Borussia Dortmund is wholeheartedly loved by its fans. Like them, BVB is deeply connected to the values that characterise its home city Dortmund and the Westfalian region: candour, sincerity and grit. We wear this authenticity as a badge of honour but also bear the scars and worry lines that come with it. It makes BVB endearing and ensures the club is supported by its fans through thick and thin.
+    </string>
+    <string name="info_about_Bvb_ambition">
+        Borussia Dortmund is an important and successful club. BVB has won many hearts in its long history and delivered many major honours: the UEFA Champions League, European trophies and German championships. The willingness to always give everything for the cause and get up time and again after falling is the visual
+expression of this ambition. It has made BVB a permanent fixture in the Bundesliga and ensures that it can face its opponents full of confidence and pride.
+    </string>
+    <string name="info_about_Bvb_cohesion">
+        Borussia Dortmund is a spiritual home and extended family for many people. BVB carries enormous appeal: for the people of Dortmund, it is the one constant that provides happiness and solidarity in a city that has experienced so much upheaval. The fans unconditional loyalty is a visible expression of this cohesion. It has made BVB a crowd magnet and ensures that the club can always rely on its fans even during difficult times.
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_1p">
+        If you had told the people of Dortmund 30 years ago about a football temple with a capacity of over 80,000 in their city centre - a stadium boasting a glass façade, undersoil heating and the largest stand in Europe - they would have all smiled tolerantly at such a fanciful notion. Nowadays, though, the SIGNAL IDUNA PARK on Strobelallee is Germanys largest football stadium with a capacity of exactly 81,365. The fact that the outlay for Borussias enormous arena almost crippled the club financially is another matter entirely - and one which was fortunately resolved at the end of May 2006.
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_2p">
+        The venue located on Strobelallee - known as "the temple" by fans and regularly dubbed "the most beautiful stadium in the country" by the press, professionals and VIPS alike - has been one of the largest and most comfortable stadia in Europe since the third expansion phase was completed. A long process of construction and conversion reached its peak when the stadium was renovated in the run-up the 2006 FIFA World Cup. Yet works are carried out on the stadium every summer, with BVB investing some ten million Euro in the renovation of the now-ageing arena in 2012 alone: both the grass and the drainage in the southern half of the pitch were replaced; the south stand was strengthened by support measures; concrete sanitation measures were implemented in the northern part; seven new VIP boxes were added in the part of the east stand where the press area used to be; new cameras armed with impressive digital technology provide greater security, with the away area and the lower tier of the south stand in particular under increased observation; and in
+the year before new scoreboards were installed.
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_3p">
+        The stadium story began some 40 years ago - on 5 April 1965 to be precise. After four long years of discussing the expansion and modernisation of the somewhat outdated "Rote Erde" arena, the citys Central and Financial Committee "took note of the suggestion not to expand the Rote Erde stadium, but instead to build a new football stadium by incorporating the two western practice fields and the small surface area occupied by the air bath". The first step on the path to building a completely new arena - named the "Twin Stadium" in official circles in view of its parallel construction to the Rote Erde - had been taken.
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_4p">
+        Yet the project did not gather full momentum until the city of Cologne decided against building a new stadium at the start of the 1970s, paving the way for Dortmund to apply as a host city for the 1974 World Cup - and for the construction of a new stadium. Without the federal and state funding provided, the financing of the Westfalenstadion would simply not have been feasible.
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_5p">
+        On 2 April 1974 - nine years after the official decision had been made - the Westfalenstadion was officially opened, with the stadium offering 54,000 predominantly standing spaces. The inauguration took place in a friendly match against Schalke 04. And the stadium has lost none of its aura since. Quite the opposite, in fact. Radio broadcasters rave about the "temple of German football" when they report from such a unique arena: the proximity to the pitch, the acoustics thanks to its complete roofing and the unique passion the fans in the Ruhr have for the beautiful game. All of this creates a crackling atmosphere, casting a spell over spectators and striking fear into opponents. An opinion poll in May 2006 saw professional footballers at the 18 Bundesliga clubs rate the grounds in Hamburg (28%) and Dortmund (27%) as their favourites.
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_6p">
+        To be precise, the history of the SIGNAL IDUNA PARK dates back to the year 1961. It was then that the Sporting Committee first discussed the expansion of the "Rote Erde Arena". In those days, which were characterised by structural change in the Ruhr and the onset of the coal and steel crisis, money was no less of a boundary than it is today. That goes some way to explaining why ten years went by before the Council decided on 4 October 1971 to build the Westfalenstadion. Finances still proved problematic, though.
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_7p">
+        The German Football Association might have been awarded hosting rights for the 1974 World Cup in 1966, yet Dortmunds plans for a new stadium to be constructed in a conventional design - thus costing 30 million Euro- threatened to fall apart. Despite the clear decision by the Council, administrative authorities were still exploring the option of expanding the existing arena in a bid to save costs.
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_8p">
+        The head of the sports department Erich Rüttel succeeded with his proposal to build a stadium based on the model of the Canadian Olympic City of Montreal (1976) using prefabricated
+construction methods. It was the decisive breakthrough. The costs were halved, with the outlay in initial talks estimated at 27 million Marks (almost 14 million Euro). By the end of the construction works, it came to seven million Marks more.
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_9p">
+        Just five months later, on 19 October 1970, the Council gave the plans the green light and decided to begin building the Westfalenstadion the following year. Over 80% of the 17 million Euro costs were funded by federal and state support, lottery takings and donations. The city contributed three million Marks to this sum, realising early on that the 1974 FIFA World Cup would offer them an unprecedented chance to construct a suitable arena for the future - without the World Cup there would have been no funding. After all, the provisional stand in the south curve of the "Rote Erde" already showed signs of damage and an internal paper by the Planning Committee revealed: "After the dismantling of this stand, the capacity will be reduced to 25,000."
+    </string>
+    <string name="info_SIGNAL_IDUNA_PARK_10p">
+        The Westfalenstadion, on the other hand, would hold 56,000 fans. Ultimately, it was around 54,000, although only 17,000 places were seated. The fact that the majority of spectators [47,000) were covered by a roof received special praise from BVBs then President, Heinz Günther. It offered "the average man in the street" a roof over his head, which was by no means usual at that time.
+    </string>
 </resources>

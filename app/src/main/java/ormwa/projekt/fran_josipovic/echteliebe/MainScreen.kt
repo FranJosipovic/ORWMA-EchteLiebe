@@ -11,15 +11,16 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import org.koin.androidx.compose.koinViewModel
 import ormwa.projekt.fran_josipovic.echteliebe.components.BottomNavigationBar
 import ormwa.projekt.fran_josipovic.echteliebe.components.TopBar
 import ormwa.projekt.fran_josipovic.echteliebe.navigation.NavigationItem
-import ormwa.projekt.fran_josipovic.echteliebe.ui.theme.EchteLiebeTheme
+import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.InfoScreen
+import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.chants.ChantsScreen
 
 @Composable
 fun MainScreen() {
@@ -56,20 +57,12 @@ fun MainScreen() {
                     Text(text = NavigationItem.Interaction.label)
                 }
                 composable(NavigationItem.Info.route) {
-                    Text(text = NavigationItem.Info.label)
+                    InfoScreen()
                 }
                 composable(route = NavigationItem.Chants.route) {
-                    Text(text = NavigationItem.Chants.label)
+                    ChantsScreen(viewModel = koinViewModel())
                 }
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun MainScreenPreview() {
-    EchteLiebeTheme {
-        MainScreen()
     }
 }
