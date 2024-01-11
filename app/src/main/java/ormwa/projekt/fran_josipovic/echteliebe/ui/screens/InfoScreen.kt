@@ -20,9 +20,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ormwa.projekt.fran_josipovic.echteliebe.R
-import ormwa.projekt.fran_josipovic.echteliebe.components.CustomTabRow
-import ormwa.projekt.fran_josipovic.echteliebe.components.ScreenPoster
-import ormwa.projekt.fran_josipovic.echteliebe.components.Subtitle
+import ormwa.projekt.fran_josipovic.echteliebe.ui.components.CustomTabRow
+import ormwa.projekt.fran_josipovic.echteliebe.ui.components.ScreenPoster
+import ormwa.projekt.fran_josipovic.echteliebe.ui.components.Subtitle
 import ormwa.projekt.fran_josipovic.echteliebe.ui.theme.EchteLiebeTheme
 
 @Composable

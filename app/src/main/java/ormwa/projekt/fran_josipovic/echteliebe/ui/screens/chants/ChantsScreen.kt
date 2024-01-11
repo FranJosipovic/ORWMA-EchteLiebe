@@ -1,7 +1,6 @@
 package ormwa.projekt.fran_josipovic.echteliebe.ui.screens.chants
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,24 +27,30 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
-import ormwa.projekt.fran_josipovic.echteliebe.components.MusicPlayer
-import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.ChantsUiState
+import ormwa.projekt.fran_josipovic.echteliebe.R
+import ormwa.projekt.fran_josipovic.echteliebe.ui.components.MusicPlayer
+import ormwa.projekt.fran_josipovic.echteliebe.ui.components.ScreenPoster
+import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.chants.ChantsUiState
 import ormwa.projekt.fran_josipovic.echteliebe.ui.theme.EchteLiebeTheme
 
 @Composable
 fun ChantsScreen(viewModel: ChantsViewModel) {
     val chantsUiState: ChantsUiState by viewModel.tracksViewState.collectAsState()
-    Box(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+    ) {
+        ScreenPoster(img = R.drawable.chantspage_poster, padding = 10)
         when (chantsUiState) {
             is ChantsUiState.Loading -> {
-                Text(text = "Loading", color = Color.White)
+                Text(text = "Loading", modifier = Modifier.padding(10.dp) ,color = Color.White)
             }
 
             is ChantsUiState.Success -> {
                 Column(
                     modifier = Modifier
-                        .fillMaxSize()
-                        .verticalScroll(rememberScrollState()),
+                        .fillMaxSize(),
                     verticalArrangement = Arrangement.SpaceEvenly
                 ) {
                     (chantsUiState as ChantsUiState.Success).tracks.forEach {
@@ -79,8 +84,7 @@ fun ChantCard(
         shape = RoundedCornerShape(10.dp),
         modifier = modifier
             .fillMaxWidth()
-            .height(80.dp)
-            ,
+            .height(80.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
         colors = CardDefaults.cardColors(
             //contentColor = MaterialTheme.colorScheme.background,

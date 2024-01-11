@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.ChantsRepository
-import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.ChantsUiState
+import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.chants.ChantsRepository
+import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.chants.ChantsUiState
 
 class ChantsViewModel(private val repository: ChantsRepository) : ViewModel() {
 

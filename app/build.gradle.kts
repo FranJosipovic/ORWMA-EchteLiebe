@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     //kotlin("jvm") version "1.9.22"
     kotlin("plugin.serialization") version "1.9.22"
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -40,6 +41,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -53,6 +55,10 @@ android {
 
 dependencies {
 
+    implementation("com.google.firebase:firebase-firestore:24.10.0")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     val ktor_version: String = "2.3.7"
     val koin_version: String = "3.5.3"
     implementation("androidx.navigation:navigation-compose:2.7.6")
@@ -71,6 +77,11 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-compose:$koin_version")
 
     implementation("io.coil-kt:coil-compose:2.5.0")
+
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.firebase:firebase-auth:22.3.0")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

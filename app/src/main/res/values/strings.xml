@@ -48,4 +48,10 @@ construction methods. It was the decisive breakthrough. The costs were halved, w
     <string name="info_SIGNAL_IDUNA_PARK_10p">
         The Westfalenstadion, on the other hand, would hold 56,000 fans. Ultimately, it was around 54,000, although only 17,000 places were seated. The fact that the majority of spectators [47,000) were covered by a roof received special praise from BVBs then President, Heinz Günther. It offered "the average man in the street" a roof over his head, which was by no means usual at that time.
     </string>
+    <string name="web_client_id">
+        881787099459-0sgj4c75p46t4jd2nhh5f14mtrntm265.apps.googleusercontent.com
+    </string>
+    <string name="fan_pools_text">
+        We want to recognize your passion and make your voice heard, wherever you are in the world. Participate in fan polls and let us know what content you would like to see next. By doing so you can actively engage with Borussia Dortmund and make your opinion count. Who knows, maybe your vote will make all the difference. Each time we upload a new fan poll, we will gift you a token in order for you to participate
+    </string>
 </resources>
