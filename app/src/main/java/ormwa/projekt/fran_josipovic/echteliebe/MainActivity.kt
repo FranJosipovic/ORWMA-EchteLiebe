@@ -15,6 +15,7 @@ import ormwa.projekt.fran_josipovic.echteliebe.auth.signInViewModelModule
 import ormwa.projekt.fran_josipovic.echteliebe.data.di.dataModule
 import ormwa.projekt.fran_josipovic.echteliebe.data.di.networkModule
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.chants.chantsModule
+import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.interactions.details.interactionDetailsModule
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.interactions.interactionsModule
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.posts.details.postDetailsModule
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.posts.postsModule
@@ -41,6 +42,7 @@ class MainActivity : ComponentActivity() {
                 postsModule,
                 postDetailsModule,
                 interactionsModule,
+                interactionDetailsModule,
                 signInViewModelModule
             )
         }

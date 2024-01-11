@@ -49,6 +49,7 @@ import ormwa.projekt.fran_josipovic.echteliebe.ui.components.ScreenPoster
 fun InteractionsScreen(
     user: UserData?,
     interactionsViewModel: InteractionsViewModel,
+    onNavigate: (String) -> Unit,
     onLogin: () -> Unit
 ) {
 
@@ -106,7 +107,7 @@ fun InteractionsScreen(
                                 tabIndex = index
                             }
                             when (tabIndex) {
-                                0 -> FanPools(pools)
+                                0 -> FanPools(pools, onNavigate)
                             }
                         }
                     }
@@ -119,7 +120,7 @@ fun InteractionsScreen(
 }
 
 @Composable
-fun FanPools(pools: List<FanPoolInteractionScreen>) {
+fun FanPools(pools: List<FanPoolInteractionScreen>, onNavigate: (String) -> Unit) {
     Column(Modifier.fillMaxSize()) {
         Text(
             modifier = Modifier.padding(bottom = 25.dp),
@@ -130,12 +131,12 @@ fun FanPools(pools: List<FanPoolInteractionScreen>) {
                 fontSize = 15.sp
             )
         )
-        PoolsCarousel(pools)
+        PoolsCarousel(pools, onNavigate)
     }
 }
 
 @Composable
-fun PoolsCarousel(pools: List<FanPoolInteractionScreen>) {
+fun PoolsCarousel(pools: List<FanPoolInteractionScreen>, onNavigate: (String) -> Unit) {
 
     var activeIndex by remember {
         mutableStateOf(0)
@@ -155,7 +156,10 @@ fun PoolsCarousel(pools: List<FanPoolInteractionScreen>) {
                 .fillMaxWidth()
                 .height(200.dp)
         ) {
-            FanPoolCard(image = activePool.img, title = activePool.title)
+            FanPoolCard(
+                image = activePool.img,
+                title = activePool.title
+            ) { onNavigate(activePool.id) }
             Icon(
                 imageVector = Icons.Filled.KeyboardArrowLeft,
                 contentDescription = "left",
@@ -190,7 +194,7 @@ fun PoolsCarousel(pools: List<FanPoolInteractionScreen>) {
                 .padding(top = 10.dp),
             horizontalArrangement = Arrangement.spacedBy(15.dp),
 
-        ) {
+            ) {
             pools.forEachIndexed { index, value ->
                 Box(
                     modifier = Modifier
@@ -214,10 +218,11 @@ data class FanPoolInteractionScreen(
 )
 
 @Composable
-fun FanPoolCard(image: String, title: String) {
+fun FanPoolCard(image: String, title: String, onNavigate: () -> Unit) {
     Row(
         Modifier
             .fillMaxSize()
+            .clickable { onNavigate() }
     ) {
         SubcomposeAsyncImage(
             modifier = Modifier

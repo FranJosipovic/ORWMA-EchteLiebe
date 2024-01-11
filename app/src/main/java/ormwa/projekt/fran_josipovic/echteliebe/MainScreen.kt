@@ -33,6 +33,7 @@ import org.koin.core.parameter.parametersOf
 import ormwa.projekt.fran_josipovic.echteliebe.auth.GoogleAuthUiClient
 import ormwa.projekt.fran_josipovic.echteliebe.auth.SignInViewModel
 import ormwa.projekt.fran_josipovic.echteliebe.auth.UserData
+import ormwa.projekt.fran_josipovic.echteliebe.navigation.InteractionDetailsDestination
 import ormwa.projekt.fran_josipovic.echteliebe.navigation.NavigationItem
 import ormwa.projekt.fran_josipovic.echteliebe.navigation.PostDetailsDestination
 import ormwa.projekt.fran_josipovic.echteliebe.ui.components.BottomNavigationBar
@@ -40,6 +41,7 @@ import ormwa.projekt.fran_josipovic.echteliebe.ui.components.TopBar
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.InfoScreen
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.chants.ChantsScreen
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.interactions.InteractionsScreen
+import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.interactions.details.InteractionsDetailsScreen
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.posts.PostsScreen
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.posts.details.PostDetailsScreen
 
@@ -144,7 +146,14 @@ fun MainScreen(
                     })
                 }
                 composable(NavigationItem.Interaction.route) {
-                    InteractionsScreen(user = userData, interactionsViewModel = koinViewModel()) {
+                    InteractionsScreen(
+                        user = userData,
+                        interactionsViewModel = koinViewModel(),
+                        onNavigate = {
+                            navController.navigate(
+                                InteractionDetailsDestination.createNavigationRoute(it)
+                            )
+                        }) {
                         lifecycleScope.launch {
                             val signInIntentSender = googleAuthUiClient.signIn()
                             launcher.launch(
@@ -154,6 +163,18 @@ fun MainScreen(
                             )
                         }
                     }
+                }
+                composable(route = InteractionDetailsDestination.route, arguments = listOf(
+                    navArgument("interactionId") { type = NavType.StringType }
+                )) {
+                    val interactionId = it.arguments?.getString("interactionId")
+                    InteractionsDetailsScreen(interactionDetailsViewModel = koinViewModel(
+                        parameters = {
+                            parametersOf(
+                                interactionId
+                            )
+                        }
+                    ), userData = userData!!)
                 }
                 composable(NavigationItem.Info.route) {
                     InfoScreen()

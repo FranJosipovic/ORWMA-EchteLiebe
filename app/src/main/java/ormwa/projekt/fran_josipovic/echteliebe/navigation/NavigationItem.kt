@@ -19,6 +19,13 @@ sealed class NavigationItem(
 }
 
 const val POST_DETAILS_ROUTE_WITH_PARAMS = "home/{postId}"
+const val INTERACTION_DETAILS_ROUTE_WITH_PARAMS = "interaction/{interactionId}"
+
+data object InteractionDetailsDestination : NavigationDestination(
+    INTERACTION_DETAILS_ROUTE_WITH_PARAMS
+) {
+    fun createNavigationRoute(interactionId: String): String = "interaction/$interactionId"
+}
 
 data object PostDetailsDestination : NavigationDestination(POST_DETAILS_ROUTE_WITH_PARAMS) {
     fun createNavigationRoute(postId: String): String = "home/$postId"
