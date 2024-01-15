@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.auth.api.identity.Identity
 import io.ktor.util.InternalAPI
@@ -33,6 +34,9 @@ class MainActivity : ComponentActivity() {
     @OptIn(InternalAPI::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        installSplashScreen()
+
         startKoin {
             androidContext(this@MainActivity)
             modules(

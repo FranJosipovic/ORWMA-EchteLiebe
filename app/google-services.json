@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "881787099459",
+    "project_id": "orwma-echteliebe",
+    "storage_bucket": "orwma-echteliebe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881787099459:android:5db3d1a13254d4b9d477f6",
+        "android_client_info": {
+          "package_name": "ormwa.projekt.fran_josipovic.echteliebe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "881787099459-fl467881bgo0v48as1vfuvkrglmg5mer.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ormwa.projekt.fran_josipovic.echteliebe",
+            "certificate_hash": "47115414ca6cebf80719d4a7e6e52924c81c830b"
+          }
+        },
+        {
+          "client_id": "881787099459-0sgj4c75p46t4jd2nhh5f14mtrntm265.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEVai2E6jnXIsS_Xwjyz0s3PVHun-34aM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "881787099459-0sgj4c75p46t4jd2nhh5f14mtrntm265.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
