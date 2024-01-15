@@ -9,9 +9,9 @@ import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMethod
 import io.ktor.http.Parameters
 import io.ktor.util.InternalAPI
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.models.AccessTokenResponse
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.models.AlbumResponse
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.models.TrackDetailsResponse
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.chants.models.AccessTokenResponse
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.chants.models.AlbumResponse
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.chants.models.TrackDetailsResponse
 import java.time.LocalDateTime
 
 class ChantsServiceImpl(val httpClient: HttpClient) : ChantsService {
@@ -22,14 +22,14 @@ class ChantsServiceImpl(val httpClient: HttpClient) : ChantsService {
     private var expireDateTime: LocalDateTime = LocalDateTime.now()
     private var accessToken: String? = null
 
-    suspend fun UpdateeAccessToken(): Unit {
-        val accessTokenResponse: AccessTokenResponse = GetAccessToken()
+    private suspend fun updateAccessToken(): Unit {
+        val accessTokenResponse: AccessTokenResponse = getAccessToken()
         expireDateTime = LocalDateTime.now().plusSeconds(accessTokenResponse.expiresIn)
         accessToken = accessTokenResponse.accessToken
     }
 
     @OptIn(InternalAPI::class)
-    private suspend fun GetAccessToken(): AccessTokenResponse {
+    private suspend fun getAccessToken(): AccessTokenResponse {
         val res = httpClient.request("https://accounts.spotify.com/api/token") {
             method = HttpMethod.Post
             headers {
@@ -46,7 +46,7 @@ class ChantsServiceImpl(val httpClient: HttpClient) : ChantsService {
 
     override suspend fun getAalbum(): AlbumResponse {
         if (expireDateTime < LocalDateTime.now() || accessToken == null) {
-            UpdateeAccessToken()
+            updateAccessToken()
         }
         val res =
             httpClient.request("https://api.spotify.com/v1/albums/$albumTrackId?market=$albumTrackMarket") {
@@ -60,7 +60,7 @@ class ChantsServiceImpl(val httpClient: HttpClient) : ChantsService {
 
     override suspend fun getTracksDetails(id:String): TrackDetailsResponse {
         if (expireDateTime < LocalDateTime.now() || accessToken == null) {
-            UpdateeAccessToken()
+            updateAccessToken()
         }
         val res =
             httpClient.request("https://api.spotify.com/v1/tracks/$id?market=HR") {

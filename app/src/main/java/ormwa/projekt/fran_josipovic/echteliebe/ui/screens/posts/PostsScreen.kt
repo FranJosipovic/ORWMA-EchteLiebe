@@ -17,7 +17,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import ormwa.projekt.fran_josipovic.echteliebe.R
 import ormwa.projekt.fran_josipovic.echteliebe.auth.UserData
-import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.posts.PostsHomeScreenUiState
 import ormwa.projekt.fran_josipovic.echteliebe.ui.components.Post
 import ormwa.projekt.fran_josipovic.echteliebe.ui.components.ScreenPoster
 

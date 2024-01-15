@@ -30,7 +30,6 @@ import coil.compose.SubcomposeAsyncImage
 import ormwa.projekt.fran_josipovic.echteliebe.R
 import ormwa.projekt.fran_josipovic.echteliebe.ui.components.MusicPlayer
 import ormwa.projekt.fran_josipovic.echteliebe.ui.components.ScreenPoster
-import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.chants.ChantsUiState
 import ormwa.projekt.fran_josipovic.echteliebe.ui.theme.EchteLiebeTheme
 
 @Composable
@@ -44,7 +43,7 @@ fun ChantsScreen(viewModel: ChantsViewModel) {
         ScreenPoster(img = R.drawable.chantspage_poster, padding = 10)
         when (chantsUiState) {
             is ChantsUiState.Loading -> {
-                Text(text = "Loading", modifier = Modifier.padding(10.dp) ,color = Color.White)
+                Text(text = "Loading", modifier = Modifier.padding(10.dp), color = Color.White)
             }
 
             is ChantsUiState.Success -> {
@@ -53,7 +52,7 @@ fun ChantsScreen(viewModel: ChantsViewModel) {
                         .fillMaxSize(),
                     verticalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    (chantsUiState as ChantsUiState.Success).tracks.forEach {
+                    (chantsUiState as ChantsUiState.Success).albumTracks.forEach {
                         ChantCard(
                             modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
                             orderNumber = it.trackNumber,

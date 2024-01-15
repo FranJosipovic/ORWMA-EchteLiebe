@@ -1,4 +1,4 @@
-package ormwa.projekt.fran_josipovic.echteliebe.data.services.posts
+package ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.models
 
 import ormwa.projekt.fran_josipovic.echteliebe.auth.UserData
 import java.time.LocalDateTime

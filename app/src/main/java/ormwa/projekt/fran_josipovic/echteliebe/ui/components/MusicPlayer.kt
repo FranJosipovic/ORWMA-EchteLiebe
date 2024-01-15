@@ -17,7 +17,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -25,13 +24,10 @@ fun MusicPlayer(url: String) {
     var mediaPlayer by remember { mutableStateOf<MediaPlayer?>(null) }
     var isPlaying by remember { mutableStateOf(false) }
 
-    val context = LocalContext.current
-
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Play Button
         IconButton(
             onClick = {
                 if (isPlaying) {
@@ -57,7 +53,6 @@ fun MusicPlayer(url: String) {
 
     DisposableEffect(Unit) {
         onDispose {
-            // Release the MediaPlayer when the composable is disposed
             mediaPlayer?.release()
         }
     }

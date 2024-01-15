@@ -11,10 +11,21 @@ import ormwa.projekt.fran_josipovic.echteliebe.data.services.chants.ChantsServic
 import ormwa.projekt.fran_josipovic.echteliebe.data.services.chants.ChantsServiceImpl
 import ormwa.projekt.fran_josipovic.echteliebe.data.services.interactions.InteractionsService
 import ormwa.projekt.fran_josipovic.echteliebe.data.services.interactions.InteractionsServiceImpl
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.mappers.InteractionsServiceMapper
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.mappers.PostsServiceMapper
 import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.PostsService
 import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.PostsServiceImpl
 
 val dataModule = module {
+
+    single {
+        InteractionsServiceMapper()
+    }
+
+    single {
+        PostsServiceMapper()
+    }
+
     single<ChantsService> {
         ChantsServiceImpl(
             httpClient = get()
@@ -28,7 +39,9 @@ val dataModule = module {
     }
 
     single<PostsService> {
-        PostsServiceImpl()
+        PostsServiceImpl(
+            postsServiceMapper = get()
+        )
     }
 
     single<PostsRepository> {
@@ -38,7 +51,9 @@ val dataModule = module {
     }
 
     single<InteractionsService> {
-        InteractionsServiceImpl()
+        InteractionsServiceImpl(
+            interactionsServiceMapper = get()
+        )
     }
 
     single<InteractionsRepository> {

@@ -5,6 +5,9 @@ import org.koin.dsl.module
 
 val postDetailsModule = module {
     viewModel { (postId: String) ->
-        PostDetailsViewModel(postsRepository = get(), postId = postId)
+        PostDetailsViewModel(
+            postsRepository = get(),
+            postId = postId
+        )
     }
 }

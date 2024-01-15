@@ -1,7 +1,7 @@
 package ormwa.projekt.fran_josipovic.echteliebe.data.services.chants
 
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.models.AlbumResponse
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.models.TrackDetailsResponse
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.chants.models.AlbumResponse
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.chants.models.TrackDetailsResponse
 
 interface ChantsService {
     suspend fun getAalbum(): AlbumResponse;

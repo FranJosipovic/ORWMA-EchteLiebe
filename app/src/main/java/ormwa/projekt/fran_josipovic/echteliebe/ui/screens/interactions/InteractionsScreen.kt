@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import ormwa.projekt.fran_josipovic.echteliebe.R
 import ormwa.projekt.fran_josipovic.echteliebe.auth.UserData
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.interactions.models.FanPoolInteraction
 import ormwa.projekt.fran_josipovic.echteliebe.ui.components.CustomTabRow
 import ormwa.projekt.fran_josipovic.echteliebe.ui.components.ScreenPoster
 
@@ -120,7 +121,7 @@ fun InteractionsScreen(
 }
 
 @Composable
-fun FanPools(pools: List<FanPoolInteractionScreen>, onNavigate: (String) -> Unit) {
+fun FanPools(pools: List<FanPoolInteraction>, onNavigate: (String) -> Unit) {
     Column(Modifier.fillMaxSize()) {
         Text(
             modifier = Modifier.padding(bottom = 25.dp),
@@ -136,7 +137,7 @@ fun FanPools(pools: List<FanPoolInteractionScreen>, onNavigate: (String) -> Unit
 }
 
 @Composable
-fun PoolsCarousel(pools: List<FanPoolInteractionScreen>, onNavigate: (String) -> Unit) {
+fun PoolsCarousel(pools: List<FanPoolInteraction>, onNavigate: (String) -> Unit) {
 
     var activeIndex by remember {
         mutableStateOf(0)
@@ -211,11 +212,6 @@ fun PoolsCarousel(pools: List<FanPoolInteractionScreen>, onNavigate: (String) ->
     }
 }
 
-data class FanPoolInteractionScreen(
-    val id: String,
-    val img: String,
-    val title: String,
-)
 
 @Composable
 fun FanPoolCard(image: String, title: String, onNavigate: () -> Unit) {

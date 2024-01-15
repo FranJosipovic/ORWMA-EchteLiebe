@@ -9,7 +9,8 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import ormwa.projekt.fran_josipovic.echteliebe.auth.UserData
 import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.interactions.InteractionsRepository
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.Comment
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.interactions.models.InteractionDetails
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.models.Comment
 import java.time.LocalDateTime
 import java.util.UUID
 

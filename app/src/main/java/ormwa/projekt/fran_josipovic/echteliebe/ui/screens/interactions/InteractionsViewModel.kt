@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.interactions.InteractionsRepository
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.interactions.models.FanPoolInteraction
 
 class InteractionsViewModel(private val interactionsRepository: InteractionsRepository) :
     ViewModel() {
@@ -21,6 +22,6 @@ class InteractionsViewModel(private val interactionsRepository: InteractionsRepo
 }
 
 sealed class InteractionScreenState {
-    data class Success(val data: List<FanPoolInteractionScreen>) : InteractionScreenState()
+    data class Success(val data: List<FanPoolInteraction>) : InteractionScreenState()
     data object Loading : InteractionScreenState()
 }

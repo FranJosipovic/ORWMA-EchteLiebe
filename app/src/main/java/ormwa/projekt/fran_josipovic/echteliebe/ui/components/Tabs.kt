@@ -28,7 +28,7 @@ import ormwa.projekt.fran_josipovic.echteliebe.ui.theme.EchteLiebeTheme
 fun CustomTabRow(
     selectedTabIndex: Int,
     tabs: List<String>,
-    fontSize:TextUnit = 25.sp,
+    fontSize: TextUnit = 25.sp,
     onTabSelected: (Int) -> Unit,
 ) {
     Row(
@@ -75,9 +75,11 @@ fun TabsPreview() {
         var tabIndex by remember { mutableStateOf(0) }
 
         val tabs = listOf("Home", "About")
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black)) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color.Black)
+        ) {
             CustomTabRow(selectedTabIndex = tabIndex, tabs = tabs) { index ->
                 tabIndex = index
             }

@@ -4,24 +4,24 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.chants.ChantsRepository
-import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.chants.ChantsUiState
+import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.chants.models.AlbumTrack
 
-class ChantsViewModel(private val repository: ChantsRepository) : ViewModel() {
-
+class ChantsViewModel(repository: ChantsRepository) : ViewModel() {
     val tracksViewState: StateFlow<ChantsUiState> = repository.getTracks()
+        .map {
+            ChantsUiState.Success(it)
+        }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000),
             initialValue = ChantsUiState.Loading
         )
+}
 
-    // Call this function to fetch tracks
-    fun fetchTracks() {
-        viewModelScope.launch {
-            repository.getTracks()
-        }
-    }
+sealed class ChantsUiState {
+    data class Success(val albumTracks: List<AlbumTrack>) : ChantsUiState()
+    data object Loading : ChantsUiState()
 }

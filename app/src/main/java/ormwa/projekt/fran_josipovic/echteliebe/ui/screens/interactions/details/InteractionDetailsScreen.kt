@@ -25,21 +25,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.SubcomposeAsyncImage
 import ormwa.projekt.fran_josipovic.echteliebe.auth.UserData
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.Comment
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.interactions.models.InteractionOption
 import ormwa.projekt.fran_josipovic.echteliebe.ui.screens.posts.details.CommentsSection
 
-data class InteractionDetails(
-    val posterImage: String,
-    val title: String,
-    val options: List<InteractionOption>,
-    val comments: List<Comment>
-)
 
-data class InteractionOption(
-    val id: String,
-    val name: String,
-    val votes: List<String>
-)
 
 @Composable
 fun InteractionsDetailsScreen(

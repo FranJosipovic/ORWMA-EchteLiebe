@@ -1,4 +1,4 @@
-package ormwa.projekt.fran_josipovic.echteliebe.data.services.models
+package ormwa.projekt.fran_josipovic.echteliebe.data.services.chants.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

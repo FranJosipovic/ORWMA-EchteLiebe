@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import ormwa.projekt.fran_josipovic.echteliebe.R
 
 @Composable
-fun ScreenPoster(@DrawableRes img: Int,padding:Int) {
+fun ScreenPoster(@DrawableRes img: Int, padding: Int) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -32,8 +32,9 @@ fun ScreenPoster(@DrawableRes img: Int,padding:Int) {
         )
     }
 }
+
 @Preview
 @Composable
 fun ScreenPosterPreview() {
-    ScreenPoster(img = R.drawable.homepage_poster,10)
+    ScreenPoster(img = R.drawable.homepage_poster, 10)
 }

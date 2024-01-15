@@ -13,17 +13,17 @@ import org.koin.dsl.module
 
 val networkModule = module {
     single {
-        HttpClient(Android){
-            install(Logging){
-                logger = object : Logger{
+        HttpClient(Android) {
+            install(Logging) {
+                logger = object : Logger {
                     override fun log(message: String) {
-                        Log.d("HTTP",message)
+                        Log.d("HTTP", message)
                     }
                 }
                 level = LogLevel.ALL
             }
 
-            install(ContentNegotiation){
+            install(ContentNegotiation) {
                 json(
                     Json {
                         isLenient = true

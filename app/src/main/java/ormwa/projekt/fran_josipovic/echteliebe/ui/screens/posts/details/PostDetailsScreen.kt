@@ -44,8 +44,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import ormwa.projekt.fran_josipovic.echteliebe.auth.UserData
-import ormwa.projekt.fran_josipovic.echteliebe.data.repositories.posts.SinglePostUiState
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.Comment
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.models.Comment
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
@@ -62,12 +61,12 @@ fun PostDetailsScreen(postDetailsViewModel: PostDetailsViewModel, userData: User
             .background(MaterialTheme.colorScheme.surface)
     ) {
         when (postDetailsViewState) {
-            is SinglePostUiState.Loading -> {
+            is PostDetailsState.Loading -> {
                 Text(text = "Loading", color = Color.White)
             }
 
-            is SinglePostUiState.Success -> {
-                val post = (postDetailsViewState as SinglePostUiState.Success).post
+            is PostDetailsState.Success -> {
+                val post = (postDetailsViewState as PostDetailsState.Success).post
                 Column(
                     Modifier
                         .fillMaxSize()

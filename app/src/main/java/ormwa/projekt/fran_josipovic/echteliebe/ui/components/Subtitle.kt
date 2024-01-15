@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun Subtitle(modifier: Modifier = Modifier,text: String, fontSize: TextUnit = 26.sp) {
+fun Subtitle(modifier: Modifier = Modifier, text: String, fontSize: TextUnit = 26.sp) {
     Text(
         text = text,
         modifier = modifier,
@@ -19,6 +19,7 @@ fun Subtitle(modifier: Modifier = Modifier,text: String, fontSize: TextUnit = 26
         fontWeight = FontWeight.Bold
     )
 }
+
 @Preview
 @Composable
 fun SubtitlePrev() {

@@ -33,7 +33,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.PostHomeScreen
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.models.PostHomeScreen
 
 @Composable
 fun Post(

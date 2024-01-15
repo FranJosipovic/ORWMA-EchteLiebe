@@ -1,17 +1,16 @@
 package ormwa.projekt.fran_josipovic.echteliebe.data.repositories.posts
 
-import android.util.Log
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.Comment
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.PostDetailsScreen
-import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.PostHomeScreen
 import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.PostsService
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.models.Comment
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.models.PostDetailsScreen
+import ormwa.projekt.fran_josipovic.echteliebe.data.services.posts.models.PostHomeScreen
 
 class PostsRepositoryImpl(private val postsService: PostsService) : PostsRepository {
 
-    override fun posts(): Flow<PostsHomeScreenUiState> = flow {
-        postsService.posts().collect {
+    override fun getPosts(): Flow<List<PostHomeScreen>> = flow {
+        postsService.postsFlow().collect {
             val posts = it.map { post ->
                 PostHomeScreen(
                     post.id,
@@ -23,33 +22,30 @@ class PostsRepositoryImpl(private val postsService: PostsService) : PostsReposit
                     post.votes,
                 )
             }
-            emit(PostsHomeScreenUiState.Success(posts))
+            emit(posts)
         }
     }
 
-    override fun post(postId: String): Flow<SinglePostUiState> = flow {
-
-        postsService.posts().collect {
+    override fun getPostDetails(postId: String): Flow<PostDetailsScreen> = flow {
+        postsService.postsFlow().collect {
             val post = it.first { post -> post.id == postId }
             emit(
-                SinglePostUiState.Success(
-                    PostDetailsScreen(
-                        post.id,
-                        post.detailedText,
-                        post.img,
-                        post.readingTime,
-                        post.subtitle,
-                        post.title,
-                        post.votes
-                    )
+                PostDetailsScreen(
+                    post.id,
+                    post.detailedText,
+                    post.img,
+                    post.readingTime,
+                    post.subtitle,
+                    post.title,
+                    post.votes
+
                 )
             )
         }
     }
 
-    override fun postComments(postId: String): Flow<List<Comment>> = flow {
-
-        postsService.posts().collect {
+    override fun getPostComments(postId: String): Flow<List<Comment>> = flow {
+        postsService.postsFlow().collect {
             val post = it.first { post -> post.id == postId }
             emit(post.comments)
         }
@@ -60,17 +56,6 @@ class PostsRepositoryImpl(private val postsService: PostsService) : PostsReposit
     }
 
     override suspend fun toggleVote(postId: String, userId: String) {
-        Log.d("toggle vote", "triggered")
         postsService.toggleVote(postId, userId)
     }
-}
-
-sealed class PostsHomeScreenUiState() {
-    data class Success(val posts: List<PostHomeScreen>) : PostsHomeScreenUiState()
-    data object Loading : PostsHomeScreenUiState()
-}
-
-sealed class SinglePostUiState() {
-    data class Success(val post: PostDetailsScreen) : SinglePostUiState()
-    data object Loading : SinglePostUiState()
 }
