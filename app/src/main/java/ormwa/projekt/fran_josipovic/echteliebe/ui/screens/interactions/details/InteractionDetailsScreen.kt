@@ -1,6 +1,5 @@
 package ormwa.projekt.fran_josipovic.echteliebe.ui.screens.interactions.details
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -100,11 +99,9 @@ fun InteractionsDetailsScreen(
 
 @Composable
 fun VoteOption(option: InteractionOption, totalVotes: Int, onVote: () -> Unit) {
-    Log.d("interaction screen", "ja okinuo $totalVotes")
-    // Use MutableState instead of MutableFloatState
+
     val progress =
         (option.votes.size.toFloat() / totalVotes).coerceIn(0f, 1f)
-
 
     Column(Modifier.fillMaxWidth()) {
         Text(text = option.name, color = Color.White, modifier = Modifier.padding(vertical = 3.dp))
